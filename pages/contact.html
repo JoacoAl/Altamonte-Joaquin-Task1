@@ -40,7 +40,10 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse nav-flex" id="navbarSupportedContent">
+          <div
+            class="collapse nav-flex navbar-collapse"
+            id="navbarSupportedContent"
+          >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item text-center">
                 <a
@@ -59,7 +62,7 @@
                 <a class="nav-link" href="./past-events.html">Past Events</a>
               </li>
               <li class="nav-item text-center">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link contactNav" href="#">Contact</a>
               </li>
               <li class="nav-item text-center">
                 <a class="nav-link" href="./stats.html">Stats</a>
@@ -69,7 +72,7 @@
         </div>
       </nav>
     </header>
-    <main style="background-color: #ddc2ff">
+    <main style="background-color: #d4b9f5">
       <!-- CAROUSEL -->
       <section>
         <div
@@ -80,7 +83,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <h2
-                class="position-absolute carousel-text text-white p-1 rounded-pill"
+                class="position-absolute carousel-text text-white py-2 px-3 rounded-pill texth2"
               >
                 Contact us
               </h2>
@@ -138,7 +141,7 @@
 
       <!-- FORM -->
       <section
-        class="d-flex align-items-center justify-content-center flex-column form-contact"
+        class="d-flex align-items-center justify-content-center flex-column form-contact py-4"
       >
         <div class="mb-3 col-7 col-lg-4">
           <label for="exampleFormControlInput1" class="form-label">Name</label>
@@ -160,7 +163,7 @@
         </div>
         <div class="mb-3 col-7 col-lg-4">
           <label for="exampleFormControlTextarea1" class="form-label"
-            >Example text area</label
+            >Message</label
           >
           <textarea
             class="form-control"
@@ -168,6 +171,7 @@
             rows="3"
           ></textarea>
         </div>
+        <input type="submit" class="p-1 rounded" />
       </section>
     </main>
 
