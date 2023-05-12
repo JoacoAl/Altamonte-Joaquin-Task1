@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Indie+Flower&family=Lobster&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -18,8 +20,20 @@
   margin: auto;
   width: fit-content !important;
   height: fit-content !important;
-  background-color: #c1a6e2;
+  background-color: #a05a7b;
 }
+body {
+  background-color: #f6aed3;
+}
+main {
+  background-color: #f6aed3;
+}
+
+.card {
+  background-color: #a05a7b;
+  color: white;
+}
+
 section img {
   height: 15rem;
   object-fit: cover;
@@ -41,6 +55,10 @@ section img {
 
 footer {
   height: 7vh;
+  background-color: #ec8cbe !important;
+  box-shadow: 0px -6px 5px 0px rgba(0, 0, 0, 0.59);
+  -webkit-box-shadow: 0px -6px 5px 0px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 0px -6px 5px 0px rgba(0, 0, 0, 0.59);
 }
 main {
   min-height: 87vh;
@@ -48,15 +66,26 @@ main {
 .form-contact {
   margin-top: 3rem;
 }
-table,
-thead,
-tr,
-td,
-tbody {
-  border: 0.5px solid rgb(255, 255, 255);
-  background-color: #ddc2ff;
-}
 
+table,
+td,
+thead {
+  border: 0.5px solid #452641;
+  background-color: #f6aed3;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+th {
+  background-color: #452641;
+  color: white;
+}
+table {
+  height: 40rem;
+  width: 30rem;
+}
+.mainStats {
+  min-height: 87vh;
+}
 .image-details {
   width: 100%;
   margin-top: 1rem;
@@ -100,6 +129,232 @@ li:hover {
   border-radius: 1rem;
 }
 
+.card:hover {
+  background-color: #6b3a58;
+  color: white;
+  font-weight: 500;
+}
+
+.carrosuel-title {
+  display: flex !important;
+  justify-content: center !important;
+  color: white;
+  font-family: "Lobster", cursive;
+  text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.seeMore {
+  background-color: #0050ec;
+  color: rgb(22, 22, 22);
+  font-size: 13px;
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: 0.1s ease;
+  border-width: 0;
+  box-shadow: 1px 5px 0 0 #0e285d;
+}
+
+.seeMore:hover {
+  transform: translateY(-4px);
+  box-shadow: 1px 9px 0 0 #0e285d;
+}
+
+.seeMore:active {
+  transform: translateY(4px);
+  box-shadow: 0px 0px 0 0 #0e285d;
+}
+
+.divPrice {
+  width: 286px !important;
+  height: 110px !important;
+}
+nav {
+  background-color: #ec8cbe;
+  box-shadow: 1px 6px 5px 0px rgba(0, 0, 0, 0.59);
+  -webkit-box-shadow: 1px 6px 5px 0px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 1px 6px 5px 0px rgba(0, 0, 0, 0.59);
+}
+.label-checks {
+  text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.59);
+  font-size: 1rem;
+  font-weight: 800;
+}
+.flecha {
+  color: white;
+}
+
+/* Button contact us */
+.buttonSend {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.buttonSend.learn-more {
+  font-weight: 600;
+  color: #382b22;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  background: #fff0f0;
+  border: 2px solid #b18597;
+  border-radius: 0.75em;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    background 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.buttonSend.learn-more::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9c4d2;
+  border-radius: inherit;
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0.75em, -1em);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.buttonSend.learn-more:hover {
+  background: #ffe9e9;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+}
+
+.buttonSend.learn-more:hover::before {
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0.5em, -1em);
+  transform: translate3d(0, 0.5em, -1em);
+}
+
+.buttonSend.learn-more:active {
+  background: #ffe9e9;
+  -webkit-transform: translate(0em, 0.75em);
+  transform: translate(0em, 0.75em);
+}
+
+.buttonSend.learn-more:active::before {
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+}
+/* ------------------*/
+.labelContact {
+  color: white;
+  font-weight: 700;
+  text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.bodyContact {
+  height: 50vh;
+}
+
+/* FLIP CARD */
+.flip-card {
+  background-color: transparent;
+  width: 500px;
+  height: 500px;
+  perspective: 1000px;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  color: white;
+  text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.7);
+  font-family: "Caveat", cursive;
+  font-size: 4rem;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid coral;
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(
+    120deg,
+    rgb(160, 90, 123) 48%,
+    rgba(160, 90, 123) 48%,
+    rgb(160, 90, 123) 40%,
+    rgb(246, 174, 211) 88%
+  );
+  color: rgb(255, 255, 255);
+}
+
+.flip-card-back {
+  background: linear-gradient(
+    120deg,
+    rgb(246, 174, 211) 48%,
+    rgba(246, 174, 211) 48%,
+    rgb(246, 174, 211) 40%,
+    rgb(160, 90, 123) 88%
+  );
+  color: #5c253c;
+  transform: rotateY(180deg);
+}
+.spanDetails {
+  color: white;
+  text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.7);
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+}
+.textDetail {
+  font-family: "Indie Flower", cursive;
+}
+
+.h3-noresults {
+  color: rgb(160, 90, 123);
+  font-family: "Lobster", cursive;
+}
 /* MEDIA QUERIES */
 @media only screen and (min-width: 576px) and (max-width: 768px) {
   .search-bar,
@@ -111,6 +366,9 @@ li:hover {
   }
   .checkbox-category {
     font-size: 1.5rem !important;
+  }
+  .card {
+    height: 30rem !important;
   }
   .image-details {
     width: 80%;
@@ -142,10 +400,11 @@ li:hover {
     justify-content: space-around !important;
   }
   .card {
-    height: 30rem !important;
+    height: 25rem !important;
   }
   .card-body {
     height: 8em !important;
+    padding: 7px;
   }
   .search-bar {
     width: 60% !important;
@@ -165,6 +424,9 @@ li:hover {
   }
   main {
     min-height: 87vh;
+  }
+  .mainContact {
+    min-height: 85vh;
   }
 }
 

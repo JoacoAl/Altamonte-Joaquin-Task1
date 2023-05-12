@@ -21,7 +21,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg" style="background-color: #ddc2ff">
+      <nav class="navbar navbar-expand-lg" style="background-color: #ec8cbe">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img
@@ -73,68 +73,25 @@
 
     <main>
       <!-- CAROUSEL -->
-      <section>
-        <div
-          id="carouselExampleAutoplaying"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
+      <section class="my-3">
+        <div id="carouselExample" class="carousel slide">
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <h2
-                class="position-absolute carousel-text text-white py-2 px-3 rounded-pill texth2"
-              >
-                Home
-              </h2>
-              <img
-                src="./assets/images/eventomasivo.jpg"
-                class="d-block w-100"
-                alt="evento-masivo"
-              />
-            </div>
-            <div class="carousel-item">
-              <h2
-                class="position-absolute carousel-text text-white py-2 px-3 rounded-pill texth2"
-              >
-                Home
-              </h2>
-              <img
-                src="https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2023/01/23/16744884668571.jpg"
-                class="d-block w-100"
-                alt="tomorrowland"
-              />
-            </div>
-            <div class="carousel-item">
-              <h2
-                class="position-absolute carousel-text text-white py-2 px-3 rounded-pill texth2"
-              >
-                Home
-              </h2>
-              <img
-                src="https://media.ambito.com/p/7050cf6b02637c57e63c2c8e235f4fa4/adjuntos/239/imagenes/040/146/0040146356/1200x675/smart/bombonerajpg.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
+            <div class="carrosuel-title carousel-item active">
+              <h1 class="carousel-title">Home</h1>
             </div>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
+          <a
+            href="./pages/upcoming-events.html"
             class="carousel-control-next"
             type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next"
+            data-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+            <span
+              class="flecha carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span></a
+          >
         </div>
       </section>
 
@@ -151,92 +108,14 @@
             type="search"
             placeholder="Search"
             aria-label="Search"
+            id="buscarPorTexto"
           />
-          <button class="btn btn-outline-primary col-3" type="submit">
-            Search
-          </button>
+          <button class="btn btn-primary col-3" type="submit">Search</button>
         </form>
         <div
           class="d-flex flex-wrap checkbox-direction gap-3 checkbox-category justify-content-center"
-        >
-          <div class="form-check d-flex align-items-start mx-1">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label class="form-check-label" for="flexCheckDefault">
-              Food Fair
-            </label>
-          </div>
-          <div class="form-check d-flex align-items-start mx-1">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Museum
-            </label>
-          </div>
-          <div class="form-check d-flex align-items-start mx-1">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Costume Party
-            </label>
-          </div>
-          <div class="form-check d-flex align-items-start mx-1">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Music Concert
-            </label>
-          </div>
-          <div class="form-check d-flex align-items-start mx-1">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Race
-            </label>
-          </div>
-          <div class="form-check d-flex align-items-start mx-1">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Book Exchange
-            </label>
-          </div>
-          <div class="form-check d-flex align-items-start mx-1">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Let's go to the cinema
-            </label>
-          </div>
-        </div>
+          id="contenedorCheckbox"
+        ></div>
       </section>
       <!-- CARDS -->
       <section
@@ -271,7 +150,7 @@
           />
         </a>
       </div>
-      <h2 class="mx-2">Cohort 47</h2>
+      <h4 class="mx-2">Cohort 47 Joaquin Altamonte</h4>
     </footer>
 
     <script
