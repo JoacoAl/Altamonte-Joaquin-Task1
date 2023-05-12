@@ -64,7 +64,7 @@ inputSearchBar.addEventListener("input", (e) => {
   const checkboxActivados = Array.from(
     document.querySelectorAll("input[type='checkbox']:checked")
   ).map((check) => check.value);
-  let cardsFiltradas = filtrarCards(allEvents, checkboxActivados);
+  let cardsFiltradas = filtrarCards(arrayFiltroEventos, checkboxActivados);
   sectionCards.innerHTML = "";
   let aux = filtrarTitulo(cardsFiltradas, inputSearchBar.value);
   /*   bucleCards(aux, sectionCards); */
