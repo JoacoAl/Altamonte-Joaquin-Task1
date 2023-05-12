@@ -65,7 +65,7 @@ inputSearchBar.addEventListener("input", (e) => {
   const checkboxActivados = Array.from(
     document.querySelectorAll("input[type='checkbox']:checked")
   ).map((check) => check.value);
-  let cardsFiltradas = filtrarCards(allEvents, checkboxActivados);
+  let cardsFiltradas = filtrarCards(arrayFiltroEventos, checkboxActivados);
   sectionCards.innerHTML = "";
   let aux = filtrarTitulo(cardsFiltradas, inputSearchBar.value);
   /*  bucleCards(aux, sectionCards); */
@@ -79,7 +79,8 @@ function filtrarTitulo(arrayData, busquedaDelUsuario) {
 }
 function imprimirCardsFiltradas(arrayFiltradoPorTexto, lugarCards) {
   if (arrayFiltradoPorTexto.length === 0) {
-    lugarCards.innerHTML = `<h3>No se encuentra un resultado a tu busqueda</h3>`;
+    lugarCards.innerHTML = `<h3 class="h3-noresults">
+    No result found for your search</h3>`;
   } else {
     const mostrarEnPantalla = arrayFiltradoPorTexto
       .map((e) => maquetaDeCards(e))

@@ -44,11 +44,11 @@ function bucleCards(infoEvents, cardPlace) {
 bucleCards(allEvents, sectionCards);
 
 /* task3 */
-//evento, searchbar( filtro cruzado dentro)
+
 inputSearchBar.addEventListener("input", (e) => {
   const checkboxActivados = Array.from(
     document.querySelectorAll("input[type='checkbox']:checked")
-  ).map((check) => check.value);
+  ).map((check) => check.value); //el map me retorna un array nuevo con los value indicados
   let cardsFiltradas = filtrarCards(allEvents, checkboxActivados);
   sectionCards.innerHTML = "";
   let aux = filtrarTitulo(cardsFiltradas, inputSearchBar.value);
@@ -56,26 +56,24 @@ inputSearchBar.addEventListener("input", (e) => {
   imprimirCardsFiltradas(aux, sectionCards);
 });
 
-//filtro por titulo
 function filtrarTitulo(arrayData, busquedaDelUsuario) {
   return arrayData.filter((e) =>
     e.name.toLowerCase().includes(busquedaDelUsuario.toLowerCase())
   );
 }
 
-//imprimir las cards, con el filtro por titulo
 function imprimirCardsFiltradas(arrayFiltradoPorTexto, lugarCards) {
   if (arrayFiltradoPorTexto.length === 0) {
-    lugarCards.innerHTML = `<h3>No se encuentra un resultado a tu busqueda</h3>`;
+    lugarCards.innerHTML = `<h3 class="h3-noresults">
+    No result found for your search</h3>`;
   } else {
     const mostrarEnPantalla = arrayFiltradoPorTexto
-      .map((e) => maquetaDeCards(e))
+      .map((e) => maquetaDeCards(e)) // recorre el array y lo lleva a la maqueta de la card, para imprimirlas
       .join("");
     lugarCards.innerHTML = mostrarEnPantalla;
   }
 }
 
-//maqueta de las checkbox
 function maquetaDeCheckbox(categoriasSinDuplicar) {
   return `<div class="form-check d-flex align-items-start mx-1">
   <input
@@ -91,7 +89,6 @@ function maquetaDeCheckbox(categoriasSinDuplicar) {
 `;
 }
 
-//imprimir las checkbox
 function imprimirCheckbox(arrayCategorias, dondeImprimirChecks) {
   let template = "";
   for (const objetoCategorias of arrayCategorias) {
@@ -100,7 +97,6 @@ function imprimirCheckbox(arrayCategorias, dondeImprimirChecks) {
   dondeImprimirChecks.innerHTML += template;
 }
 
-//las categorias las filtro y saco el duplicado
 let categorias = allEvents.map((e) => e.category);
 console.log(categorias);
 let categoriasSinDuplicar = [...new Set(categorias)]; //... (spread) rompe el set y crea un nuevo array, el set no permite elementos duplicados. Entonces las categorias quedan sin duplicar.
@@ -108,7 +104,6 @@ console.log(categoriasSinDuplicar);
 
 imprimirCheckbox(categoriasSinDuplicar, divContenedorChecks);
 
-//evento de checkbox(con filtro cruzado incluido)
 divContenedorChecks.addEventListener("change", () => {
   const checkboxActivados = Array.from(
     document.querySelectorAll("input[type='checkbox']:checked")
@@ -120,13 +115,12 @@ divContenedorChecks.addEventListener("change", () => {
   imprimirCardsFiltradas(aux, sectionCards);
 });
 
-//filtro de las cards
 function filtrarCards(arrayData, categorias) {
   if (categorias.length == 0) {
     return arrayData;
   } else {
     return arrayData.filter((e) => {
-      return categorias.includes(e.category); // me retorna los checksbox activados con sus respectivas categorias
+      return categorias.includes(e.category); // categorias = checkboxActivado
     });
   }
 }

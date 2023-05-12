@@ -1,7 +1,7 @@
 const allEvents = dataCards.events;
 const articleDetails = document.getElementById("article-details");
 
-const parametros = new URLSearchParams(location.search);
+const parametros = new URLSearchParams(location.search); //te devuelve los parametros de la url
 let paramterosId = parametros.get("id");
 const eventoQueCoincidePorID = allEvents.find((e) => e._id == paramterosId);
 
