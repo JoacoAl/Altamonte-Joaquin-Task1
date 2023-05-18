@@ -1,9 +1,27 @@
+/* task2 */
 let sectionCards = document.getElementById("section-cards-dom");
 /* task3 */
 let inputSearchBar = document.getElementById("buscarPorTexto");
-let allEvents = dataCards.events;
 let divContenedorChecks = document.getElementById("contenedorCheckbox");
 let checkboxInput = document.querySelectorAll("input[type='checkbox']");
+
+/* task4 */
+let arrayEventos;
+let eventos;
+let arrayFiltroEventos;
+
+fetch("https://mindhub-xj03.onrender.com/api/amazing")
+  .then((data) => data.json())
+  .then((res) => {
+    arrayEventos = res;
+    eventos = arrayEventos.events;
+    let categorias = eventos.map((e) => e.category);
+    let categoriasSinDuplicar = [...new Set(categorias)];
+    arrayFiltroEventos = filtroPorFecha(eventos, arrayEventos.currentDate);
+    imprimirCheckbox(categoriasSinDuplicar, divContenedorChecks);
+    bucleCards(arrayFiltroEventos, sectionCards);
+  })
+  .catch((err) => console.log(err));
 
 function maquetaDeCards(objeto) {
   return `<div class="card" style="width: 18rem">
@@ -42,22 +60,15 @@ function filtroPorFecha(arrayEventos, fecha) {
   }
   return eventosFiltro;
 }
-filtroPorFecha(dataCards.events, dataCards.currentDate);
 //Guardar el array que esta dentro de la funcio, en una variable fuera de la funcion
-let arrayFiltroEventos = filtroPorFecha(
-  dataCards.events,
-  dataCards.currentDate
-);
 
-function bucleCards(infoEvents, cardPlace) {
+function bucleCards(infoEvento, lugarDondeImprimoCards) {
   let template = "";
-  for (let cardinfo of infoEvents) {
+  for (let cardinfo of infoEvento) {
     template += maquetaDeCards(cardinfo);
   }
-  cardPlace.innerHTML += template;
+  lugarDondeImprimoCards.innerHTML += template;
 }
-
-bucleCards(arrayFiltroEventos, sectionCards);
 
 /* task3 */
 inputSearchBar.addEventListener("input", (e) => {
@@ -68,6 +79,17 @@ inputSearchBar.addEventListener("input", (e) => {
   sectionCards.innerHTML = "";
   let aux = filtrarTitulo(cardsFiltradas, inputSearchBar.value);
   /*   bucleCards(aux, sectionCards); */
+  imprimirCardsFiltradas(aux, sectionCards);
+});
+
+divContenedorChecks.addEventListener("change", () => {
+  const checkboxActivados = Array.from(
+    document.querySelectorAll("input[type='checkbox']:checked")
+  ).map((check) => check.value);
+  let cardsFiltradas = filtrarCards(arrayFiltroEventos, checkboxActivados);
+  sectionCards.innerHTML = "";
+  let aux = filtrarTitulo(cardsFiltradas, inputSearchBar.value);
+  /* bucleCards(aux, sectionCards); */
   imprimirCardsFiltradas(aux, sectionCards);
 });
 
@@ -109,24 +131,6 @@ function imprimirCheckbox(arrayCategorias, dondeImprimirChecks) {
   }
   dondeImprimirChecks.innerHTML += template;
 }
-
-let categorias = allEvents.map((e) => e.category);
-console.log(categorias);
-let categoriasSinDuplicar = [...new Set(categorias)]; //... (spread) rompe el set y crea un nuevo array, el set no permite elementos duplicados. Entonces las categorias quedan sin duplicar.
-console.log(categoriasSinDuplicar);
-
-imprimirCheckbox(categoriasSinDuplicar, divContenedorChecks);
-
-divContenedorChecks.addEventListener("change", () => {
-  const checkboxActivados = Array.from(
-    document.querySelectorAll("input[type='checkbox']:checked")
-  ).map((check) => check.value);
-  let cardsFiltradas = filtrarCards(arrayFiltroEventos, checkboxActivados);
-  sectionCards.innerHTML = "";
-  let aux = filtrarTitulo(cardsFiltradas, inputSearchBar.value);
-  /* bucleCards(aux, sectionCards); */
-  imprimirCardsFiltradas(aux, sectionCards);
-});
 
 function filtrarCards(arrayData, categorias) {
   if (categorias.length == 0) {
