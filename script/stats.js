@@ -1,16 +1,11 @@
 let tabla = document.getElementById("tabla");
-let tablaStats = document.getElementById("tabla-stats");
-let tablaStats1 = document.getElementById("tabla-stats1");
-let tablaStats2 = document.getElementById("tabla-stats2");
-let mayorPorcentaje = document.getElementById("mayor-porcentaje");
-let menorPorcentaje = document.getElementById("menor-porcentaje");
-let mayorCapacidad = document.getElementById("mayor-capacidad");
 
 fetch("https://mindhub-xj03.onrender.com/api/amazing")
   .then((data) => data.json())
   .then((res) => {
     const arrayEventos = res;
     const eventos = arrayEventos.events;
+    console.log(arrayEventos);
     const eventosPasados = eventos.filter(
       (e) => e.date < arrayEventos.currentDate
     );
