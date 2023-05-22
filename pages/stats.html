@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../assets/style/style.css" />
     <link
       rel="shortcut icon"
-      href="../assets/images/favicon .png"
+      href="../assets/images/favicon1.png"
       type="image/x-icon"
     />
     <title>Amazing Events - Stats</title>
@@ -92,13 +92,70 @@
       </div>
     </section>
     <main
+      id="app"
       class="mainStats d-flex flex-column justify-content-center align-items-center"
     >
       <!-- TABLE -->
       <section
         class="d-flex align-items-center justify-content-center m-0 col-8 flex-column"
         id="tabla"
-      ></section>
+      >
+        <h2 class="h2-stats">Events Statics</h2>
+        <table id="tabla-stats" class="col-12">
+          <thead>
+            <tr>
+              <th class="col-4">
+                Events with the highest percentage of attendance
+              </th>
+              <th class="col-4">
+                Events with the lowest percentage of attendance
+              </th>
+              <th class="col-4">Events with larger capacity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="mayor-porcentaje">{{porcentajeMayor}}</td>
+              <td id="menor-porcentaje">{{porcentajeMenor}}</td>
+              <td id="mayor-capacidad">{{capacidadMayor}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 class="h2-stats">Upcoming events statistics by category</h2>
+        <table id="tabla-stats1" class="col-12">
+          <thead>
+            <tr>
+              <th class="col-4">Categories</th>
+              <th class="col-4">Revenues</th>
+              <th class="col-4">Percentage of attendance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="objeto of tablaUpco">
+              <td>{{objeto.categoria}}</td>
+              <td>${{objeto.ingresos}}</td>
+              <td>{{objeto.porcentajeTotalAsistencia}}%</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 class="h2-stats">Past events statistics by category</h2>
+        <table id="tabla-stats2" class="col-12">
+          <thead>
+            <tr>
+              <th class="col-4">Categories</th>
+              <th class="col-4">Revenues</th>
+              <th class="col-4">Percentage of attendance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="objeto of tablaPast">
+              <td>{{objeto.categoria}}</td>
+              <td>${{objeto.ingresos}}</td>
+              <td>{{objeto.porcentajeTotalAsistencia}}%</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
     <!-- FOOTER -->
     <footer
@@ -135,6 +192,7 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="../script/stats.js"></script>
   </body>
 </html>

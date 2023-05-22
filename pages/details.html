@@ -73,12 +73,53 @@
       </nav>
     </header>
     <main
+      id="app"
       class="mainStats d-flex flex-column justify-content-center align-items-center"
     >
       <article
         id="article-details"
         class="d-flex flex-column col-12 justify-content-center col-lg-12 col-xl-12 gap-2 flex-lg-row justify-content-lg-center"
-      ></article>
+      >
+      <div class="d-flex justify-content-center div-details" >
+        <img
+          class="image-details"
+          v-bind:src="eventoQueCoincidePorID.image"
+          alt="Books"
+        />
+        </div>
+        <div class="flip-card">
+        <div class="flip-card-inner p-2">
+          <div class="flip-card-front">
+            <p class="title">{{eventoQueCoincidePorID.name}}</p>
+          </div>
+          <div class="flip-card-back">
+            <p class="title">DETAILS</p>
+            <p class="textDetail">
+              {{eventoQueCoincidePorID.description}}</p>
+            <p class="textDetail"><span class="spanDetails">Date</span>: {{
+              eventoQueCoincidePorID.date
+            }}</p>
+            <p class="textDetail"><span class="spanDetails">Category</span> : {{
+              eventoQueCoincidePorID.category
+            }}</p>
+            <p class="textDetail"><span class="spanDetails">Place</span> : {{
+              eventoQueCoincidePorID.place
+            }}</p>
+            <p class="textDetail"><span class="spanDetails">Capacity</span> : {{
+              eventoQueCoincidePorID.capacity
+            }}</p>
+            <p class="textDetail">
+              <span v-if="eventoQueCoincidePorID.assistance"><span class="spanDetails">Assistance</span> :  {{eventoQueCoincidePorID.assistance}}</span>
+              <span v-else-if="eventoQueCoincidePorID.estimate"><span class="spanDetails">Estimate</span> : {{eventoQueCoincidePorID.estimate}}</span>
+            </p>
+            <p class="textDetail"><span class="spanDetails">Price</span>: ${{
+              eventoQueCoincidePorID.price
+            }}</p>
+        </div> 
+          </div>
+        </div>
+        </div>
+    </article>
     </main>
     <!-- FOOTER -->
     <footer
@@ -114,7 +155,7 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-    <script src="../script/data.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="../script/details.js"></script>
   </body>
 </html>

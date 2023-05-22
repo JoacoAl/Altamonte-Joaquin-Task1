@@ -348,7 +348,8 @@ nav {
   font-size: 2rem;
 }
 .textDetail {
-  font-family: "Indie Flower", cursive;
+  font-size: 1.2rem;
+  font-style: italic;
 }
 
 .h3-noresults {
@@ -376,7 +377,7 @@ thead {
     width: 90%;
   }
   main {
-    min-height: 100vh;
+    height: 110vh;
   }
   .checkbox-category {
     font-size: 1.5rem !important;
@@ -388,6 +389,30 @@ thead {
     width: 80%;
     margin-top: 1rem;
     border-radius: 20px;
+  }
+  .flip-card-front,
+  .flip-card-inner,
+  .flip-card {
+    padding: 0 !important;
+    width: 320px;
+    height: 380px;
+  }
+  .flip-card-back {
+    height: 380px;
+  }
+  .textDetail,
+  .title {
+    margin: 0;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  #article-details {
+    align-items: center;
+    margin: 0;
+  }
+  .image-details {
+    margin: 0;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -401,6 +426,33 @@ thead {
     width: 80%;
     margin-top: 1rem;
     border-radius: 20px;
+  }
+  .flip-card-front,
+  .flip-card-inner,
+  .flip-card {
+    padding: 0 !important;
+    width: 400px;
+    height: 450px;
+  }
+  .flip-card-back {
+    height: 400px;
+  }
+  .textDetail,
+  .title {
+    margin: 0;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  #article-details {
+    align-items: center;
+    margin: 0;
+  }
+  .image-details {
+    margin: 0;
+  }
+  main {
+    height: 120vh;
   }
 }
 
@@ -441,6 +493,34 @@ thead {
   }
   .mainContact {
     min-height: 85vh;
+  }
+  .flip-card-front,
+  .flip-card-inner,
+  .flip-card {
+    padding: 0 !important;
+    width: 400px;
+    height: 450px;
+  }
+  .flip-card-back {
+    height: 450px;
+  }
+  .textDetail,
+  .title {
+    margin: 0;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  #article-details {
+    align-items: center;
+    margin: 0;
+  }
+  .image-details {
+    margin-top: 1rem;
+    border-radius: 20px;
+  }
+  .flip-card {
+    margin-right: 1rem;
   }
 }
 
@@ -493,9 +573,33 @@ thead {
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 567px) {
+@media only screen and (min-width: 320px) and (max-width: 576px) {
   .checkbox-direction {
     display: flex;
     flex-direction: column;
+  }
+  .flip-card-front,
+  .flip-card-inner,
+  .flip-card {
+    padding: 0 !important;
+    width: 320px;
+    height: 400px;
+  }
+  .flip-card-back {
+    height: 380px;
+  }
+  .textDetail,
+  .title {
+    margin: 0;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  #article-details {
+    align-items: center;
+    margin: 0;
+  }
+  .image-details {
+    margin: 0;
   }
 }

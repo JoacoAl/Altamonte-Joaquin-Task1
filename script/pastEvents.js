@@ -1,11 +1,63 @@
-/* task2 */
+const url = "https://mindhub-xj03.onrender.com/api/amazing";
+
+const { createApp } = Vue;
+
+const app = createApp({
+  //propiedades reactivas
+  data() {
+    return {
+      eventos: [],
+      textoIngresado: "",
+      filtroPorTexto: [],
+      categoriasSinDuplicar: [],
+      checkboxChecked: [],
+      eventosFiltrados: [],
+      eventosPast: [],
+    };
+  },
+
+  created() {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        const arrayEventos = data;
+        this.eventos = arrayEventos.events;
+        this.eventosPast = this.eventos.filter(
+          (evento) => evento.date < arrayEventos.currentDate
+        );
+        console.log(this.eventosPast);
+        let categorias = this.eventos.map((e) => e.category);
+        this.categoriasSinDuplicar = [...new Set(categorias)];
+      })
+      .catch((err) => console.log(err));
+  },
+
+  methods: {},
+
+  computed: {
+    filtroCombinados() {
+      let aux = (this.eventosFiltrados = this.eventosPast.filter((evento) =>
+        evento.name.toLowerCase().includes(this.textoIngresado.toLowerCase())
+      ));
+
+      this.eventosFiltrados = aux.filter(
+        (e) =>
+          this.checkboxChecked.includes(e.category) ||
+          this.checkboxChecked.length == 0
+      );
+    },
+  },
+});
+
+app.mount("#app");
+
+/*
 let sectionCards = document.getElementById("section-cards-dom");
-/* task3 */
+
 let inputSearchBar = document.getElementById("buscarPorTexto");
 let divContenedorChecks = document.getElementById("contenedorCheckbox");
 let checkboxInput = document.querySelectorAll("input[type='checkbox']");
 
-/* task4 */
 let arrayEventos;
 let eventos;
 let arrayFiltroEventos;
@@ -70,7 +122,6 @@ function bucleCards(infoEvento, lugarDondeImprimoCards) {
   lugarDondeImprimoCards.innerHTML += template;
 }
 
-/* task3 */
 inputSearchBar.addEventListener("input", (e) => {
   const checkboxActivados = Array.from(
     document.querySelectorAll("input[type='checkbox']:checked")
@@ -78,7 +129,7 @@ inputSearchBar.addEventListener("input", (e) => {
   let cardsFiltradas = filtrarCards(arrayFiltroEventos, checkboxActivados);
   sectionCards.innerHTML = "";
   let aux = filtrarTitulo(cardsFiltradas, inputSearchBar.value);
-  /*   bucleCards(aux, sectionCards); */
+  /*   bucleCards(aux, sectionCards); 
   imprimirCardsFiltradas(aux, sectionCards);
 });
 
@@ -89,7 +140,7 @@ divContenedorChecks.addEventListener("change", () => {
   let cardsFiltradas = filtrarCards(arrayFiltroEventos, checkboxActivados);
   sectionCards.innerHTML = "";
   let aux = filtrarTitulo(cardsFiltradas, inputSearchBar.value);
-  /* bucleCards(aux, sectionCards); */
+  /* bucleCards(aux, sectionCards); 
   imprimirCardsFiltradas(aux, sectionCards);
 });
 
@@ -141,3 +192,4 @@ function filtrarCards(arrayData, categorias) {
     });
   }
 }
+ */
